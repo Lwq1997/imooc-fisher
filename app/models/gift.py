@@ -6,10 +6,10 @@
 from sqlalchemy import Column, Integer, ForeignKey, String, Boolean
 from sqlalchemy.orm import relationship
 
-from app.models.base import db
+from app.models.base import Base
 
 
-class Gift(db.Model):
+class Gift(Base):
     id = Column(Integer, primary_key=True)
     uid = Column(Integer, ForeignKey('user.id'), nullable=False)
     user = relationship('User')
