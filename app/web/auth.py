@@ -1,13 +1,22 @@
-from flask import render_template
+from flask import render_template, request
 
+from app.models.base import db
+from app.forms.auth import RegisterForm
+from app.models.user import User
 from app.web.blueprint import web
 
 __author__ = '七月'
 
 
-@web.route('/register')
+@web.route('/register', methods=['GET', 'POST'])
 def register():
-    return render_template('auth/register.html', form={'data':{}})
+    form = RegisterForm(request.form)
+    if request.method == 'POST' and form.validate():
+        user = User()
+        user.set_attr(form.data)
+        db.session.add(user)
+        db.session.commit()
+    return render_template('auth/register.html', form=form)
 
 
 @web.route('/login', methods=['GET', 'POST'])
