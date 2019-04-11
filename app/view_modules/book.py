@@ -13,6 +13,7 @@ class BookViewModule:
         self.publisher = book['publisher']
         self.image = book['image']
         self.pages = book['pages']
+        self.isbn = book['isbn']
         self.summary = book['summary']
 
     def intro(self):
