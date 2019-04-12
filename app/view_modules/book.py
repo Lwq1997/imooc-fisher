@@ -15,6 +15,8 @@ class BookViewModule:
         self.pages = book['pages']
         self.isbn = book['isbn']
         self.summary = book['summary']
+        self.pubdate = book['pubdate']
+        self.binding = book['binding']
 
     def intro(self):
         intros = filter(lambda x: True if x else False, [self.publisher, self.author, self.price])
