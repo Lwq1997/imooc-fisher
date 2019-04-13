@@ -55,3 +55,6 @@ class Gift(Base):
             Wish.isbn).all()
         count_list = [{'count': w[0], 'isbn': w[1]} for w in count_list]
         return count_list
+
+    def is_yourself_gift(self, uid):
+        return True if self.uid == uid else False
