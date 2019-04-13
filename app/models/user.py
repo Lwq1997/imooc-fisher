@@ -52,6 +52,7 @@ class User(UserMixin, Base):
         else:
             return False
 
+
 @login_manager.user_loader
 def get_user(uid):
     return User.query.get(int(uid))

@@ -54,9 +54,12 @@ def book_detail(isbn):
     book = BookViewModule(yushu_book.first)
 
     if current_user.is_authenticated:
-        if Gift.query.filter_by(uid=current_user.id, launched=False, isbn=isbn).first:
+        # 如果未登录，current_user将是一个匿名用户对象
+        if Gift.query.filter_by(uid=current_user.id, isbn=isbn,
+                                launched=False).first():
             has_in_gifts = True
-        if Wish.query.filter_by(uid=current_user.id, launched=False, isbn=isbn).first:
+        if Wish.query.filter_by(uid=current_user.id, isbn=isbn,
+                                launched=False).first():
             has_in_wishes = True
 
     trade_gifts = Gift.query.filter_by(isbn=isbn, launched=False).all()
