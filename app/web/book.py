@@ -14,7 +14,7 @@ from app.models.wish import Wish
 from app.spider.yushu_book import YuShuBook
 from app.view_modules.book import BookCollection, BookViewModule
 from app.view_modules.trade import TradeInfo
-from app.web.blueprint import web
+from app.web import web
 
 
 @web.route('/book/search')

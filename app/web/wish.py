@@ -4,7 +4,7 @@ from flask_login import current_user, login_required
 from app import db
 from app.models.wish import Wish
 from app.view_modules.trade import MyTrades
-from app.web.blueprint import web
+from app.web import web
 
 __author__ = '七月'
 

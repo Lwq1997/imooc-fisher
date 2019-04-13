@@ -2,7 +2,7 @@ from flask import render_template
 
 from app.models.gift import Gift
 from app.view_modules.book import BookViewModule
-from app.web.blueprint import web
+from app.web import web
 
 __author__ = '七月'
 

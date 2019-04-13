@@ -1,4 +1,4 @@
-from app.web.blueprint import web
+from app.web import web
 
 
 __author__ = '七月'
